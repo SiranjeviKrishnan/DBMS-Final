@@ -3,9 +3,8 @@ import mysql.connector
 # Connect to MySQL database
 db = mysql.connector.connect(
   host="localhost",
-  user="yourusername",
-  password="yourpassword",
-  database="Olympics_<your_student_id>"
+  user="root",
+  database="Olympics_21274501"
 )
 
 cursor = db.cursor()
