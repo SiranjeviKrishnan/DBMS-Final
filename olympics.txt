@@ -72,14 +72,14 @@ INSERT INTO Results (ResultID, AthleteID, EventID, MedalType) VALUES
 (4, 4, 1, 'Silver'),
 (5, 5, 4, 'Bronze');
 
-// Query to find all athletes who won gold medals
+-- Query to find all athletes who won gold medals
 SELECT a.Name AS AthleteName, e.EventName
 FROM Athletes a
 JOIN Results r ON a.AthleteID = r.AthleteID
 JOIN Events e ON r.EventID = e.EventID
 WHERE r.MedalType = 'Gold';
 
-// Query to get medal counts by country
+-- Query to get medal counts by country
 SELECT c.CountryName, r.MedalType, COUNT(*) AS MedalCount
 FROM Results r
 JOIN Athletes a ON r.AthleteID = a.AthleteID
@@ -87,7 +87,7 @@ JOIN Countries c ON a.CountryID = c.CountryID
 GROUP BY c.CountryName, r.MedalType;
 
 
-//Stored Procedure
+-- Stored Procedure
 DELIMITER //
 CREATE PROCEDURE GetMedalCount(IN countryName VARCHAR(100))
 BEGIN
